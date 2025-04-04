@@ -1,12 +1,78 @@
-# React + Vite
+![logo](https://github.com/user-attachments/assets/2ba64e41-7323-499d-94b7-779fdef5b9e3)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Rebel Rover Travel Website
 
-Currently, two official plugins are available:
+A modern, responsive travel booking platform built with **React**, **Tailwind CSS**, and **React Router**, integrating a **Mock API** to simulate real-world backend functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+##  Project Summary
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project transforms the **Rebel Rover** Figma design into a fully functional travel website. It demonstrates key front-end development skills, including:
+
+- UI Development from Figma
+- API Integration using [MockAPI.io](https://mockapi.io)
+- Routing, State Management, and CRUD operations
+
+---
+
+##  Tech Stack
+
+- **React**
+- **React Router**
+- **Tailwind CSS**
+- **MockAPI.io** (Backend Simulation)
+
+---
+
+##  Features
+
+### 🔹 Home Page
+- Hero banner
+- Featured destinations
+- Customer testimonials
+
+### 🔹 Destinations Page
+- Searchable destination grid
+- Filters by country and price
+
+### 🔹 Booking Page
+- Multi-step booking form
+- Date picker integration
+
+### 🔹 User Profile Page
+- View booking history
+- Update account settings
+
+---
+
+## API Integration
+
+We use MockAPI.io for backend simulation.
+
+**Base URL**:  
+`https://67eadc5834bcedd95f64c9f3.mockapi.io/RebelRover/`
+
+**Endpoint Example**:  
+ **Destinations**  
+`GET/POST/PUT/DELETE: /Destinations`
+
+Fields include:
+- `id`
+- `name`
+- `country`
+- `price`
+- `image` (URL)
+- `description`
+
+_Fields may slightly vary — always test in Postman first._
+
+---
+
+## 🔧 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/helenlemessa/Rebel-Rover-Travel-Website.git
+cd Rebel-Rover-Travel-Websitel
