@@ -29,6 +29,31 @@ This project transforms the **Rebel Rover** Figma design into a fully functional
 
 ---
 
+##  Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/helenlemessa/Rebel-Rover-Travel-Website.git
+cd Rebel-Rover-Travel-Website
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the Development Server
+
+```bash
+npm run dev
+```
+
+Your project will run on [http://localhost:5173](http://localhost:5173).
+
+---
+
 ## Features
 
 ### 🔹 Home Page
@@ -134,28 +159,4 @@ Rebel-Rover-Travel-Website/
 
 ---
 
-## 🔧 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/helenlemessa/Rebel-Rover-Travel-Website.git
-cd Rebel-Rover-Travel-Website
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Start the Development Server
-
-```bash
-npm run dev
-```
-
-Your project will run on [http://localhost:5173](http://localhost:5173).
-
----
 
