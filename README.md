@@ -76,3 +76,18 @@ _Fields may slightly vary — always test in Postman first._
 ```bash
 git clone https://github.com/helenlemessa/Rebel-Rover-Travel-Website.git
 cd Rebel-Rover-Travel-Websitel
+```
+### 2. Install Dependencies  
+
+```bash 
+npm install
+```
+
+### 3. Start the Development Server:  
+
+```bash 
+npm run dev
+```
+
+
+
