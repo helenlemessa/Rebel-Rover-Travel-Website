@@ -1,0 +1,214 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.hero{
+  
+  padding: 200px 20px; 
+  text-align: center;
+  
+}
+.hero h1 ,.hero p {
+  font-size: 4rem;
+  color:white;
+  font-weight: bold; 
+  text-shadow: 4px 4.5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+  padding-top: 0.9rem;
+  font-size: 1.9rem;
+  
+}
+.icon img{
+  width: 200px;
+  height: 140px;
+  
+}
+.title h1{
+  font-size: 3rem;
+  font-weight: bold;
+}
+.descripition{
+  font-size: 1.2rem;
+  padding-top: 16px;
+  color: gray;
+  font-weight: 510;
+ line-height: 2.2rem;
+  text-align: center;
+}
+.card{
+  display : flex;
+  flex-direction: column;
+  
+  align-items: center;
+  width: 400px;
+ 
+}
+.cards{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 200px;
+}
+.goalcontainer{
+  margin-bottom: 300px;
+}
+.maincontainer{
+  display:flex;
+}
+.lefthalf {
+  flex: 1;
+}
+.righthalf {
+  flex: 1;
+  text-align: left;
+ 
+ 
+}
+.desc,.writername {
+  padding-left: 50px;
+  width:95%;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: rgb(69, 69, 69);
+  font-weight: 510;
+  line-height: 2rem;
+}
+.writername h1{
+  font-size: 2rem;
+  color:black;
+  font-weight: bold;
+}
+
+.writername p{
+  color: gray;
+  font-weight: 510;
+}
+.goalicon img{
+  width: 200px;
+  height: 140px;
+}
+
+@media (max-width: 768px) {
+  .maincontainer {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+  }
+
+  .lefthalf {
+    flex: 0 0 auto;
+    width: 100%; 
+    margin-bottom: 20px;
+  }
+
+  .righthalf {
+    flex: 0 0 auto;
+    width: 100%; 
+    padding: 10px;
+  }
+
+  .desc, .writername {
+    padding-left: 0; 
+    text-align: center; 
+    font-size: 1rem; 
+    margin-top: 10px;
+  }
+
+  .writername h1 {
+    font-size: 1.5rem; 
+  }
+
+  .writername p {
+    font-size: 1rem; 
+  }
+
+  .goalicon img {
+    width: 150px; 
+    height: 100px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.statbox{
+  display:flex;
+  align-items: center;
+ 
+}
+.countandtitle{
+  padding-left: 20px;
+}
+.countandtitle h2{
+  color:white;
+  font-weight: bold; /* Make the text bold */
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  font-size: 2.7rem;
+}
+.countandtitle p{
+  color:rgb(229, 229, 229);
+  font-weight: bold; /* Make the text bold */
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+  font-size: 22px;
+}
+.staticon img{
+  width: 110px;
+  height: 100px;
+  
+}
+.statistics{
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 400px;
+}
+@media (max-width: 768px) {
+  .statistics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+  }
+
+  .statbox {
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+  }
+
+  .countandtitle h2 {
+    font-size: 2rem; 
+  }
+
+  .countandtitle p {
+    font-size: 18px; 
+  }
+
+  .staticon img {
+    width: 90px; 
+    height: 80px; 
+  }
+}
