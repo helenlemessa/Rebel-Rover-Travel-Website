@@ -1,17 +1,36 @@
-import { useState } from 'react'
-import Logo from './assets/logo1 1.svg'
-function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout";
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
+// Pages
+import Home from "./pages/Home";
+import About from "./pages/AboutUs";
+import Package from "./pages/Package";
+import Blog from "./pages/SingleBlog";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
+
+const App = () => {
   return (
-    <>
-      <div className='flex flex-col items-center justify-center min-h-screen bg-gray-400'>
-       <div>
-          <img src={Logo} alt="logo" className='h-32' />
-       </div>
-        <h1 className='text-3xl font-bold text-center'>Lets start</h1>
-      </div>
-    </>
-  )
-}
+<Router>
+  <Navbar />
+  
+  <MainLayout>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/package" element={<Package />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </MainLayout>
 
-export default App
+  <Footer />
+</Router>
+
+  );
+};
+
+export default App;
