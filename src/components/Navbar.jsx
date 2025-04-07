@@ -30,13 +30,14 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-10 text-sm font-medium">
+        <nav className="hidden md:flex items-center space-x-15 text-sm font-medium ml-auto">
           {/* <a href="#" className="hover:text-yellow-400 md:mr-50 mr-5">
             Home
           </a> */}
-          <NavLink to="#" className="hover:text-yellow-400 md:mr-50 mr-5">
+         <NavLink to="#" className="hover:text-yellow-400"> {/* md:mr-50 mr-5 */}
             Home
           </NavLink>
+          <NavLink to="/about" ctiveClassName="hover:text-yellow-400">About Us</NavLink>
           <NavLink
             to="/package"
             className="flex items-center hover:text-yellow-400 cursor-pointer"

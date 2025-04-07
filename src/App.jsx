@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 
 // Pages
 import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
 import Package from "./pages/Package";
 import DestinationCard from './components/DestinationCard/DestinationCard'
 import Blog from "./pages/SingleBlog";
@@ -19,6 +20,7 @@ const App = () => {
   <MainLayout>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/about" element={<AboutUs />} />
       <Route path="/package" element={<Package />} />
       <Route path="/destination" element={<DestinationCard />} />
       <Route path="/blog" element={<Blog />} />
