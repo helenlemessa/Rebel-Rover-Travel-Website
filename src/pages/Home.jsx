@@ -1,40 +1,24 @@
 import React from 'react'
+import { useState } from 'react'
 import Logo from '../assets/logo1 1.svg'
 import SearchModal from '../components/ui/SearchModal'
+import Hero from '../components/ui/Hero'
+
+import Horobanner from '../assets/PlaceholderImages/HeroBanner.png'
 
 function Home() {
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-400'>
-      <div>
-        <SearchModal />
-        <img src={Logo} alt="logo" className='h-32' />
-      </div>
-      <div>
-        <SearchModal />
-        <img src={Logo} alt="logo" className='h-32' />
-      </div>
-      <div>
-        <SearchModal />
-        <img src={Logo} alt="logo" className='h-32' />
-      </div>
-      <div>
-        <SearchModal />
-        <img src={Logo} alt="logo" className='h-32' />
-      </div>
-      <div>
-        <SearchModal />
-        <img src={Logo} alt="logo" className='h-32' />
-      </div>
-      <div>
-        <SearchModal />
-        <img src={Logo} alt="logo" className='h-32' />
-      </div>
-      <div>
-        <SearchModal />
-        <img src={Logo} alt="logo" className='h-32' />
-      </div>
-      <h1 className='text-3xl font-bold text-center'>Home Page</h1>
-   </div>
+
+    <section className=''>
+       <Hero
+        backgroundImage= {Horobanner}
+        title="Welcome to Our Website"
+        subtitle="Your journey begins here."
+        textColor="#fff" 
+        height="500px" 
+      />
+
+   </section>
   )
 }
 

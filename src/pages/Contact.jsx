@@ -1,14 +1,22 @@
-import React from 'react'
-import Logo from '../assets/logo1 1.svg'
-function Contact() {
-  return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-400'>
-          <div>
-            <img src={Logo} alt="logo" className='h-32' />
-          </div>
-          <h1 className='text-3xl font-bold text-center'>Contact Page</h1>
-       </div>
-  )
-}
+import React from 'react';
+import ContactForm from '../components/ui/ContactForm';
+import Hero from '../components/ui/Hero'
+import Horobanner from '../assets/PlaceholderImages/ContactBanner.png'
 
-export default Contact
+export default function Contact() {
+  return (
+    <>
+     <div className="">
+        <Hero
+            backgroundImage= {Horobanner}
+            title="Welcome to Our Website"
+            subtitle="Your journey begins here."
+            textColor="#fff" 
+            height="500px" 
+          />
+         <ContactForm />
+      </div>
+    </>
+  
+  )
+};
