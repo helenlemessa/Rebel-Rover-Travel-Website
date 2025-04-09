@@ -1,14 +1,39 @@
-import React from 'react'
-import Logo from '../assets/logo1 1.svg'
-function SingleBlog() {
-  return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-400'>
-       <div>
-          <img src={Logo} alt="logo" className='h-32' />
-       </div>
-        <h1 className='text-3xl font-bold text-center'>Single Blog Page</h1>
-      </div>
-  )
-}
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import Header from "../components/Blog/Header";
+import Content1 from "../components/Blog/Content1";
+import Content2 from "../components/Blog/Content2";
 
-export default SingleBlog
+const SingleBlog = () => {
+  const [destination, setDestination] = useState(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://67eadc5834bcedd95f64c9f3.mockapi.io/RebelRover/Destinations/1`
+      )
+      .then((response) => {
+        // console.log(response.data);
+        setDestination(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching", error);
+      });
+  }, [id]);
+
+  return (
+    <>
+      <Header />
+      {destination ? (
+        <Content1 destination={destination} />
+      ) : (
+        <p className="font-semibold text-center">Loading...</p>
+      )}
+      <Content2 />
+    </>
+  );
+};
+
+export default SingleBlog;
