@@ -12,7 +12,7 @@ const SingleBlog = () => {
   useEffect(() => {
     axios
       .get(
-        `https://67eadc5834bcedd95f64c9f3.mockapi.io/RebelRover/Destinations/1`
+        `https://67eadc5834bcedd95f64c9f3.mockapi.io/RebelRover/Destinations`
       )
       .then((response) => {
         // console.log(response.data);

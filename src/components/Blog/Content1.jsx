@@ -12,24 +12,47 @@ const Content1 = ({ destination }) => {
         <div className="flex flex-col">
           <div>
             <img
-              src={destination.image}
-              className="w-full h-[650px] object-cover"
-              alt={destination.name}
+              src={Image2}
+              className="w-full h-[650px] object-cover rounded-md"
+              alt=""
             />
-            <p className="mt-5 text-gray-500">{destination.description}</p>
+            <p className="mt-5 text-gray-500">
+              {" "}
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laudantium maxime magni, amet, reprehenderit optio molestiae
+              quibusdam atque, voluptate esse autem rerum sed ipsa magnam culpa
+              quas minima beatae voluptatum nemo. Lorem ipsum dolor, sit amet
+              consectetur adipisicing elit. Consequuntur, facilis sunt atque,
+              voluptate error, molestias reiciendis beatae delectus illum
+              eveniet debitis minima corporis aut blanditiis. Tempora veritatis
+            </p>
           </div>
           <div>
             <h1 className="mb-5 mt-5 text-3xl font-semibold">
-              {destination.name}
+              Rice Terraces, Tegallalang
             </h1>
-            <p className="text-gray-500 mb-4">{destination.description}</p>
-            <img
-              src={destination.image}
-              className="w-full h-auto"
-              alt={destination.name}
-            />
+            <p className="text-gray-500 mb-4">
+              {" "}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+              odio, quisquam placeat ducimus odit voluptas nisi nesciunt,
+              dignissimos exercitationem, fuga nam distinctio! Temporibus,
+              quibusdam, libero magni delectus eveniet
+            </p>
+            <img src={Image3} className="w-full h-auto rounded-md" alt="" />
             <p className="mt-5 mb-10 text-gray-500">
-              {destination.description}
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laudantium maxime magni, amet, reprehenderit optio molestiae
+              quibusdam atque, voluptate esse autem rerum sed ipsa magnam culpa
+              quas minima beatae voluptatum nemo. Lorem ipsum dolor, sit amet
+              consectetur adipisicing elit. Consequuntur, facilis sunt atque,
+              voluptate error, molestias reiciendis beatae delectus illum
+              eveniet debitis minima corporis aut blanditiis. Tempora veritatis
+              iusto tenetur enim Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Saepe cupiditate sunt id, vel recusandae debitis
+              provident beatae dolorum reprehenderit nisi illo ratione. Magni
+              culpa voluptatibus cumque aliquid. In, dolor odio! Lorem ipsum
+              dolor sit amet. Lorem ipsum dolor sit, amet consectetur
+              adipisicing elit. Perspiciatis!
             </p>
           </div>
           <div className="flex flex-wrap justify-between items-center gap-4 mb-10">

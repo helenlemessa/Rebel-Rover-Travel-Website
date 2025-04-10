@@ -26,7 +26,7 @@ const Content2 = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        className="w-auto px-4 py-10 grid grid-cols-1 gap-10 md:grid grid-cols-[65%_35%] md:mx-10 md:mt-30 h-[660px]"
+        className="w-auto px-4 py-10 grid grid-cols-1 gap-10 md:grid grid-cols-[65%_35%] md:mx-10 md:mt-30 h-[760px]"
       >
         <div>
           <h1 className="mb-3 text-2xl font-semibold">Leave a Reply</h1>
