@@ -7,7 +7,8 @@ import Saticon from '../assets/satisfied.png';
 import Travlericon from '../assets/traveler.png';
 import Destination from '../assets/destination.png';
 import Award from '../assets/award.png';
-import heroimg1 from '../assets/heroimg1.jpg';
+import heroimg2 from '../assets/heroimg1.jpg';
+import heroimg1 from '../assets/PlaceholderImages/AboutUsBanner.png';
 import Goalimg2 from '../assets/goalimg2.jpg';
 import Statimg3 from '../assets/statimg3.jpg';
 import dubai  from '../assets/dubai.jpg';
@@ -68,12 +69,15 @@ function Goal() {
           </span>
         </div>
         <div className="writername mt-6 text-center lg:text-left">
-          <h1 className="text-2xl lg:text-3xl font-bold">Siti Sarah</h1>
-          <p className="text-gray-500 text-lg lg:text-xl  font-medium">Founder Travosca</p>
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">Siti Sarah</h1>
+          <p className="text-gray-500 text-base sm:text-lg lg:text-xl font-medium">
+            Founder Travosca
+          </p>
         </div>
       </div>
     </div>
-);}
+  );}
+  
 
 
 function Statistics(props) {
@@ -97,44 +101,50 @@ function Statistics(props) {
 
 function Moments() {
   return (
-    <div style={{marginBottom:'200px'}} >
+    <div style={{ marginBottom: '200px' }}>
       <div className="Momenttext flex flex-col justify-center items-center">
-        <p className="text-4xl 
-        text-gray-600 font-medium leading-tight text-center">Gallery</p>
-        <h1 className="text-4xl font-bold text-black 
-        lg:text-6xl
-        ">Unforgettable moment</h1>
+        <p className="text-4xl text-gray-600 font-medium leading-tight text-center">Gallery</p>
+        <h1 className="text-4xl font-bold text-black lg:text-6xl">Unforgettable moment</h1>
       </div>
-      <div className="pictures 
-        lg:p-10 mt-16 h-[700px] flex">
+      <div className="pictures lg:p-10 mt-16 flex flex-col lg:flex-row h-auto lg:h-[700px]">
         <div className="rightpic flex-1 flex flex-col h-full">
           <div className="bali flex-1 relative m-2">
-            <img src={bali} alt="Bali" className="w-full h-full 
-            
-            object-cover " style={{ borderRadius:'20px', 
-              height: '676px' }} />
-            <div className="overlay absolute bottom-2 left-16 transform -translate-x-1/2 text-white font-bold text-4xl">Bali</div>
+            <img
+              src={bali}
+              alt="Bali"
+              className="w-full h-[300px] lg:h-full object-cover"
+              style={{ borderRadius: '20px' }}
+            />
+            <div className="overlay absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white font-bold text-2xl lg:text-4xl">Bali</div>
           </div>
         </div>
         <div className="leftpic flex-1 flex flex-col h-full">
           <div className="upperleft flex-1 relative m-2">
             <div className="dubai flex-1 relative">
-              <img src={dubai} alt="Dubai" className="w-full h-[328px] object-cover rounded-lg" />
-              <div className="overlay absolute bottom-2 left-16 transform -translate-x-1/2 text-white font-bold text-4xl">Dubai</div>
+              <img
+                src={dubai}
+                alt="Dubai"
+                className="w-full h-[150px] lg:h-[328px] object-cover rounded-lg"
+              />
+              <div className="overlay absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white font-bold text-xl lg:text-4xl">Dubai</div>
             </div>
           </div>
-          <div className="lowerleft flex-1 flex">
+          <div className="lowerleft flex-1 flex flex-col lg:flex-row">
             <div className="paris flex-1 relative m-2">
-              <img src={paris} alt="Paris" className="w-full h-[328px] object-cover rounded-lg" />
-              <div className="overlay absolute bottom-2 left-16 transform -translate-x-1/2 
-            text-white font-bold text-2xl
-            sm:m-2
-            ">Paris</div>
+              <img
+                src={paris}
+                alt="Paris"
+                className="w-full h-[150px] lg:h-[328px] object-cover rounded-lg"
+              />
+              <div className="overlay absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white font-bold text-xl lg:text-2xl">Paris</div>
             </div>
             <div className="italy flex-1 relative m-2">
-              <img src={italy} alt="Italy" className="w-full h-[328px] object-cover rounded-lg" />
-              <div className="overlay absolute bottom-2 left-16 transform -translate-x-1/2 
-              text-white font-bold text-2xl">Italy</div>
+              <img
+                src={italy}
+                alt="Italy"
+                className="w-full h-[150px] lg:h-[328px] object-cover rounded-lg"
+              />
+              <div className="overlay absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white font-bold text-xl lg:text-2xl">Italy</div>
             </div>
           </div>
         </div>
