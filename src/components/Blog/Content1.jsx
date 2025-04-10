@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image2 from "../../assets/image2.png";
 import Image3 from "../../assets/image3.png";
 import Image4 from "../../assets/image4.png";
@@ -6,15 +6,27 @@ import Image5 from "../../assets/image5.png";
 import Image6 from "../../assets/image6.png";
 
 const Content1 = ({ destination }) => {
+  const [loading, setLoading] = useState(true);
+  const [imageError, setImageError] = useState(true);
+
+  const handleImageLoading = () => {
+    setLoading(false);
+  };
+
+  const handleImageError = () => {
+    setImageError(false);
+  };
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-10 mx-4 md:mx-10 my-20 w-auto">
         <div className="flex flex-col">
           <div>
             <img
-              src={Image2}
+              src={imageError ? Image2 : destination.image}
               className="w-full h-[650px] object-cover rounded-md"
-              alt=""
+              alt="destination.name"
+              onLoad={handleImageLoading}
+              onError={handleImageError}
             />
             <p className="mt-5 text-gray-500">
               {" "}
@@ -38,7 +50,11 @@ const Content1 = ({ destination }) => {
               dignissimos exercitationem, fuga nam distinctio! Temporibus,
               quibusdam, libero magni delectus eveniet
             </p>
-            <img src={Image3} className="w-full h-auto rounded-md" alt="" />
+            <img
+              src={imageError ? Image3 : destination.image}
+              className="w-full h-auto rounded-md"
+              alt="destination.name"
+            />
             <p className="mt-5 mb-10 text-gray-500">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Laudantium maxime magni, amet, reprehenderit optio molestiae
