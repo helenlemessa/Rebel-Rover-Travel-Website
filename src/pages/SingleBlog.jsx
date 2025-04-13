@@ -8,7 +8,8 @@ import Content2 from "../components/Blog/Content2";
 const SingleBlog = () => {
   const [destination, setDestination] = useState(null);
   const { id } = useParams();
-
+  const [currentPage, setCurrentPage] = useState(0);
+  
   useEffect(() => {
     axios
       .get(
@@ -23,6 +24,10 @@ const SingleBlog = () => {
       });
   }, [id]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
+  
   return (
     <>
       <Header />

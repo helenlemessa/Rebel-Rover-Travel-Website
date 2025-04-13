@@ -6,6 +6,7 @@ import Package from '../pages/Package';
 import Blog from '../pages/SingleBlog';
 import Contact from '../pages/Contact';
 import NotFound from '../pages/NotFound';
+import Destination from '../pages/Destination';
 import Layout from '../components/Layout/Layout';
 
 function AppRoutes() {
@@ -16,7 +17,7 @@ function AppRoutes() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/package" element={<Package />} />
-          <Route path="/destination" element={<Package />} />
+          <Route path="/destination" element={<Destination />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

@@ -1,6 +1,13 @@
 import React from 'react'
+import { useEffect,useState } from 'react'
 import Logo from '../assets/logo1 1.svg'
 function NotFound() {
+  const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
+
   return (
     <div className='flex flex-col items-center justify-center min-h-screen bg-gray-800'>
     <div>

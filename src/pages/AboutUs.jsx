@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import Teamicon from '../assets/team.png';
 import Missionicon from '../assets/mission.png';
 import Visionicon from '../assets/vision.png';
@@ -22,6 +23,13 @@ import CountUp from 'react-countup';
 
 
 function MissionandVision(props) {
+
+  const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
+
   return (
     <div className="card flex flex-col items-center w-[400px] text-center ">
       <div>

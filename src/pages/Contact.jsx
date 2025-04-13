@@ -1,9 +1,18 @@
 import React from 'react';
+import { useEffect,useState } from 'react';
 import ContactForm from '../components/ui/ContactForm';
 import Hero from '../components/ui/Hero'
 import Horobanner from '../assets/PlaceholderImages/ContactBanner.png'
 
+
 export default function Contact() {
+  
+  const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
+
   return (
     <>
      <div className="">
