@@ -3,7 +3,6 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 
-
 const ContactForm = () => {
   const [form, setForm] = useState({
     name: '',
@@ -12,49 +11,42 @@ const ContactForm = () => {
     message: '',
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    // Use environment variables for EmailJS configuration
     emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID, // Use Service ID from .env
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Use Template ID from .env
-      e.target, // Send the form as target
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Use Public Key from .env
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      e.target,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
-    .then((result) => {
-      console.log('Email sent successfully:', result.text);
-      Swal.fire({
-        title: 'Message Sent!',
-        text: 'Your message has been successfully sent.',
-        icon: 'success',
-        confirmButtonColor: '#000',
-        confirmButtonText: 'Awesome!',
+      .then((result) => {
+        Swal.fire({
+          title: 'Message Sent!',
+          text: 'Your message has been successfully sent.',
+          icon: 'success',
+          confirmButtonColor: '#000',
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: 'Oops!',
+          text: 'Something went wrong. Please try again.',
+          icon: 'error',
+          confirmButtonColor: '#000',
+        });
+      })
+      .finally(() => {
+        setLoading(false);
+        setForm({ name: '', email: '', subject: '', message: '' });
       });
-    })
-    .catch((error) => {
-      console.log('Error sending email:', error.text);
-      Swal.fire({
-        title: 'Oops!',
-        text: 'Something went wrong. Please try again.',
-        icon: 'error',
-        confirmButtonColor: '#000',
-        confirmButtonText: 'Retry',
-      });
-    });
-    
-
-    // Reset the form after submission
-    setForm({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
   };
 
   const contactInfo = [
@@ -64,12 +56,30 @@ const ContactForm = () => {
       email: 'contact@domain.com',
       location: 'Jl. Darussalam Hagu selatan',
     },
-    // Add more contacts if needed
+    {
+      name: 'Lhoksemawe, Aceh',
+      phone: '+62 6943 6956',
+      email: 'contact@domain.com',
+      location: 'Jl. Darussalam Hagu selatan',
+    },
+    {
+      name: 'Lhoksemawe, Aceh',
+      phone: '+62 6943 6956',
+      email: 'contact@domain.com',
+      location: 'Jl. Darussalam Hagu selatan',
+    },
+    {
+      name: 'Lhoksemawe, Aceh',
+      phone: '+62 6943 6956',
+      email: 'contact@domain.com',
+      location: 'Jl. Darussalam Hagu selatan',
+    },
   ];
 
   return (
     <div className="w-full min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center p-4 md:p-8">
       <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto space-y-8 md:space-y-0 md:space-x-8">
+        
         {/* Contact Form */}
         <form
           onSubmit={handleSubmit}
@@ -111,11 +121,22 @@ const ContactForm = () => {
             className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-black-400"
             required
           ></textarea>
+
           <button
             type="submit"
-            className="w-full bg-black text-white py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition duration-300"
+            className={`w-full bg-black text-white py-3 rounded-full text-lg font-semibold transition duration-300 ${
+              loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-800'
+            }`}
+            disabled={loading}
           >
-            Send Message
+            {loading ? (
+              <div className="flex justify-center items-center space-x-2">
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <span>Sending...</span>
+              </div>
+            ) : (
+              'Send Message'
+            )}
           </button>
         </form>
 
@@ -123,9 +144,7 @@ const ContactForm = () => {
         <div className="flex-1 md:ml-10 md:mx-0 mx-auto">
           <h2 className="text-3xl font-extrabold font-poppins mb-4 md:mb-8">Get In Touch</h2>
           <p className="text-gray-600 mb-6 md:mb-8">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto amet iure optio magnam, illo eius error
-            tenetur, voluptates facilis necessitatibus architecto quasi beatae. Praesentium qui quaerat vitae modi earum
-            harum.
+            Feel free to reach out to us. Whether you have questions or just want to say hello, we’re always happy to hear from you.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -150,6 +169,7 @@ const ContactForm = () => {
             ))}
           </div>
         </div>
+        
       </div>
     </div>
   );
