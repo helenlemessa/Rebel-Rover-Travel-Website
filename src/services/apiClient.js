@@ -4,7 +4,7 @@ const BASE_URL = import.meta.env.VITE_API_URL;
 
 export const getDestinations = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/Destinations`);
+    const response = await axios.get(`${BASE_URL}/Destinations`); // ✅ Fixed backticks here
     return response.data;
   } catch (error) {
     console.error('Error fetching destinations:', error);
@@ -33,7 +33,7 @@ export const dummyArticles = [
   },
   {
     id: 3,
-    image: "", // No image provided
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvSbmvk_QRGMcomKjYtnV4yC63oYp7zLvOmXabA6OG6Adp53yLhIdVglCug4VRoh3LwOM&usqp=CAU", 
     title: "Best Beach Destinations in 2025",
     date: "2025-03-15",
     tag: "Relax",

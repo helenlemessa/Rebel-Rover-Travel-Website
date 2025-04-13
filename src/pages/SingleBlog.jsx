@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Header from "../components/Blog/Header";
 import Content1 from "../components/Blog/Content1";
 import Content2 from "../components/Blog/Content2";
-
+import Image2 from "../assets/image2.png"; 
 const SingleBlog = () => {
   const [destination, setDestination] = useState(null);
   const { id } = useParams();

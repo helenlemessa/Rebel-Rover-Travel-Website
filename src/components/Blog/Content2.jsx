@@ -26,12 +26,12 @@ const Content2 = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        className="w-auto mb-50 px-4 py-10 grid grid-cols-1 gap-10 md:grid grid-cols-[65%_35%] md:mx-10 md:mt-30 h-[660px]"
+        className="w-full px-4 py-10 grid gap-10 md:grid-cols-[65%_35%] md:mx-10 md:mt-30 h-auto"
       >
         <div>
           <h1 className="mb-3 text-2xl font-semibold">Leave a Reply</h1>
           <p className="text-gray-500 mb-6">
-            Your email address will not be published Required fields are marked*
+            Your email address will not be published. Required fields are marked*
           </p>
           <label htmlFor="comment" className="font-semibold text-gray-700">
             Comment
@@ -39,7 +39,7 @@ const Content2 = () => {
           <textarea
             name="comment"
             id="comment"
-            className=" border border-gray-400 w-full h-40 mt-2 rounded-sm"
+            className="border border-gray-400 w-full h-40 mt-2 rounded-sm"
             value={formData.comment}
             onChange={handleChange}
           ></textarea>

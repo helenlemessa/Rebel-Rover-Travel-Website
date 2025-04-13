@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBarsStaggered } from "react-icons/fa6";
 import NavLinks from "../ui/NavLinks";
+import SearchOverlay from "../ui/SearchOverlay";
 import NavLogo from "../../assets/logo1 1.svg";
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
   const closeDrawer = () => setIsDrawerOpen(false);
   const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
 
-  // Keyboard shortcut: open on Ctrl+K or ⌘+K, close on Escape.
+  // Keyboard shortcut
   useEffect(() => {
     const handleKeyDown = (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
@@ -41,6 +41,7 @@ const Navbar = () => {
                 className="w-60 h-auto transition-transform"
               />
             </NavLink>
+
             {/* Hamburger for mobile */}
             <div className="lg:hidden text-white text-xl">
               <button onClick={toggleDrawer}>
@@ -110,12 +111,35 @@ const Navbar = () => {
             ✕
           </button>
         </div>
+
         <ul className="flex flex-col gap-2">
           <NavLinks isMobile={true} onCloseMobile={closeDrawer} />
         </ul>
+
+        {/* Mobile search button */}
+        <div className="mt-6">
+          <button
+            onClick={() => {
+              toggleSearch();
+              closeDrawer();
+            }}
+            className="flex items-center gap-2 w-full px-3 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all"
+          >
+            <svg
+              className="w-5 h-5 text-white"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="M21 21l-4.3-4.3" />
+            </svg>
+            <span>Search Destinations</span>
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Backdrop */}
       {isDrawerOpen && (
         <div
           className="fixed inset-0 bg-black/80 bg-opacity-50 z-30"
@@ -123,48 +147,7 @@ const Navbar = () => {
         />
       )}
 
-      {/* Search Overlay */}
-      {isSearchOpen && (
-        <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start justify-center pt-20"
-          onClick={() => setIsSearchOpen(false)}
-        >
-          <div
-            className="w-full max-w-2xl px-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative group">
-              <input
-                type="text"
-                placeholder="Search..."
-                autoFocus
-                className="w-full py-4 pl-6 pr-14 text-lg bg-gray-800/80 border-2 border-gray-700 rounded-2xl outline-none focus:border-gray-500 placeholder-gray-400 text-white backdrop-blur-lg transition-all"
-              />
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
-                <kbd className="hidden sm:inline-flex items-center px-2 py-1 bg-gray-800/50 border border-gray-600 rounded-md text-gray-100 text-sm">
-                  Esc
-                </kbd>
-                <svg
-                  className="w-6 h-6 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2.5}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
-            </div>
-            <p className="text-center mt-4 text-gray-400 text-sm">
-              Start typing to search. Press Esc to close.
-            </p>
-          </div>
-        </div>
-      )}
+      <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </div>
   );
 };
