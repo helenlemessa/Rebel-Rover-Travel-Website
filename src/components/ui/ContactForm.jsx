@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
+
 
 const ContactForm = () => {
   const [form, setForm] = useState({
@@ -15,7 +18,43 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Submitted:', form);
+
+    // Use environment variables for EmailJS configuration
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID, // Use Service ID from .env
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Use Template ID from .env
+      e.target, // Send the form as target
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Use Public Key from .env
+    )
+    .then((result) => {
+      console.log('Email sent successfully:', result.text);
+      Swal.fire({
+        title: 'Message Sent!',
+        text: 'Your message has been successfully sent.',
+        icon: 'success',
+        confirmButtonColor: '#000',
+        confirmButtonText: 'Awesome!',
+      });
+    })
+    .catch((error) => {
+      console.log('Error sending email:', error.text);
+      Swal.fire({
+        title: 'Oops!',
+        text: 'Something went wrong. Please try again.',
+        icon: 'error',
+        confirmButtonColor: '#000',
+        confirmButtonText: 'Retry',
+      });
+    });
+    
+
+    // Reset the form after submission
+    setForm({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    });
   };
 
   const contactInfo = [
@@ -25,24 +64,7 @@ const ContactForm = () => {
       email: 'contact@domain.com',
       location: 'Jl. Darussalam Hagu selatan',
     },
-    {
-      name: 'Lhoksemawe, Aceh',
-      phone: '+62 6943 6956',
-      email: 'contact@domain.com',
-      location: 'Jl. Darussalam Hagu selatan',
-    },
-    {
-      name: 'Lhoksemawe, Aceh',
-      phone: '+62 6943 6956',
-      email: 'contact@domain.com',
-      location: 'Jl. Darussalam Hagu selatan',
-    },
-    {
-      name: 'Lhoksemawe, Aceh',
-      phone: '+62 6943 6956',
-      email: 'contact@domain.com',
-      location: 'Jl. Darussalam Hagu selatan',
-    },
+    // Add more contacts if needed
   ];
 
   return (
