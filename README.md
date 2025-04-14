@@ -52,6 +52,12 @@ npm run dev
 
 Your project will run on [http://localhost:5173](http://localhost:5173).
 
+## Design Reference
+
+Access the Figma design for this project:
+
+[Rebel Rover | Travel Website Theme](https://www.figma.com/design/layfhpZL6cBoAgV41xp7qq/Rebel-Rover-%7C-Travel-Website-Theme-Figma-(Community)?node-id=1-2&t=mRUtU3iOi4o9tare-0)
+
 ---
 
 ## Features
