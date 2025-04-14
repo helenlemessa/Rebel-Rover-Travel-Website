@@ -165,13 +165,14 @@ const AboutUs = () => {
           img={Teamicon}
           alt="Team Icon"
           title="Great team work"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sequi nisi mollitia provident sed ad dicta, soluta est voluptatibus laborum iure. Quidem earum, numquam nostrum cumque distinctio molestiae aspernatur fugit?"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sequi nisi mollitia provit sed ad dicta, soluta est voluptatibus laborum iure. Quidem earum, numquam nostrum
+          Quidem earum,adipisicing elit. Molestias sequi  "
         />
         <MissionandVision
           img={Visionicon}
           alt="Vision Icon"
           title="Our Vision"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sequi nisi mollitia provident sed ad dicta, soluta est voluptatibus laborum iure. Quidem."
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sequi nisi mollitiaprovident sed ad dicta, soluta est voluptatibus laborum iure. Quidem."
         />
         <MissionandVision
           img={Missionicon}
