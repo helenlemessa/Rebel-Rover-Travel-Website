@@ -1,0 +1,99 @@
+/* Container */
+.booking-history {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* Title */
+.booking-history h1 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* List container */
+.booking-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 0.5fr;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual booking card */
+.booking-item {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Name header */
+.booking-item h2 {
+  margin: 0 0 0.5rem;
+  color: #222;
+  font-size: 1.25rem;
+}
+
+/* Text info */
+.booking-item p {
+  margin: 0.25rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Button group: display buttons horizontally */
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Align buttons with space between */
+  gap: 0.75rem; /* Add space between the buttons */
+  margin-top: 1rem;
+}
+
+/* Buttons */
+.booking-item button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.booking-item button:hover {
+  background-color: #0056b3;
+}
+
+/* Delete button style */
+.booking-item button:last-of-type {
+  background-color: #dc3545;
+}
+
+.booking-item button:last-of-type:hover {
+  background-color: #b02a37;
+}
+
+/* Responsive: 2-column layout on wide screens */
+@media (min-width: 768px) {
+  .booking-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Optional: 3-column layout on larger screens */
+@media (min-width: 1024px) {
+  .booking-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
