@@ -1,17 +1,43 @@
-import { useState } from 'react'
-import Logo from './assets/logo1 1.svg'
-function App() {
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import HeaderPackage from "./pages/Package";
+import Booking from "./features/booking/BookingForm";
+import UserFormProvider from "./contexts/UserFormContext"; // Import UserFormProvider
+
+import { useState } from "react";
+import BookingHistory from "./features/profile/BookingHistory";
+import Destination from "./components/DestinationCard/DestinationCard";
+
+const App = () => {
+  const [book, setBook] = useState({
+    firstName: "",
+    middleName: "",
+    lastname: "",
+  });
 
   return (
-    <>
-      <div className='flex flex-col items-center justify-center min-h-screen bg-gray-400'>
-       <div>
-          <img src={Logo} alt="logo" className='h-32' />
-       </div>
-        <h1 className='text-3xl font-bold text-center'>Lets start</h1>
-      </div>
-    </>
-  )
-}
+    <UserFormProvider>
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<HeaderPackage book={book} setBook={setBook} />}
+          />
+          <Route
+            path="/destination"
+            element={<Destination book={book} setBook={setBook} />}
+          />
+          <Route
+            path="/booking"
+            element={<Booking book={book} setBook={setBook} />}
+          />
+          <Route
+            path="/booking-history"
+            element={<BookingHistory book={book} setBook={setBook} />}
+          />
+        </Routes>
+      </Router>
+    </UserFormProvider>
+  );
+};
 
-export default App
+export default App;
